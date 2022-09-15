@@ -1,20 +1,19 @@
 // const fs = require("fs");
 // const mkdir = require("mkdirp");
-const utils = require("./utils/generators");
+const utils = require("./utils/dirgenerators");
 
 
-const createDir = (path) => {
+const createDir = (path, folderName) => {
     
-    utils.rootFiles(path);
-    utils.publicsFol(path);
-    utils.configFol(path);
-    utils.dbFol(path);
-    utils.modelsFol(path);
-    utils.mwFol(path);
-    utils.routesFol(path);
+    utils.rootFiles(path, folderName);
+    utils.publicsFol(path, folderName);
+    utils.configFol(path, folderName);
+    utils.dbFol(path, folderName);
+    utils.modelsFol(path, folderName);
+    utils.mwFol(path, folderName);
+    utils.routesFol(path, folderName);
 }
 
-console.log(`Open new folder: ${process.argv[2]}`)
+console.log(`Open new folder: ${process.argv[2]}/${process.argv[3]}`)
 
-createDir(process.argv[2]);
-
+createDir(process.argv[2], process.argv[3]);
