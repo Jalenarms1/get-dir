@@ -1,5 +1,5 @@
-// const fs = require("fs");
-// const mkdir = require("mkdirp");
+const fs = require("fs");
+const mkdir = require("mkdirp");
 const utils = require("./utils/dirgenerators");
 
 

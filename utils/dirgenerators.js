@@ -2,6 +2,11 @@ const fs = require("fs");
 const mkdir = require("mkdirp");
 
 const rootFiles = (path, folderName) => {
+
+    fs.mkdir(`${path}/${folderName}`, {recursive: true}, (err) => {
+        if(err) console.log(err);
+    })
+
     fs.writeFile(`${path}/${folderName}/.env`, "# Install dotenv", (err) => {
         if(err) {
             console.log(err);
