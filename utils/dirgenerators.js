@@ -21,7 +21,7 @@ const rootFiles = (path, folderName) => {
     })
 };
 
-const publicsFol = (path) => {
+const publicsFol = (path, folderName) => {
 
     fs.mkdir(`${path}/${folderName}/public`, {recursive: true}, (err) => {
         if(err) console.log(err);
@@ -44,7 +44,7 @@ const publicsFol = (path) => {
     })
 };
 
-const configFol = (path) => {
+const configFol = (path, folderName) => {
 
     fs.mkdir(`${path}/${folderName}/config`, {recursive: true}, (err) => {
         if(err) console.log(err);
@@ -55,7 +55,7 @@ const configFol = (path) => {
     })
 }
 
-const dbFol = (path) => {
+const dbFol = (path, folderName) => {
 
     fs.mkdir(`${path}/${folderName}/db`, {recursive: true}, (err) => {
         if(err) console.log(err);
@@ -66,7 +66,7 @@ const dbFol = (path) => {
     })
 }
 
-const modelsFol = (path) => {
+const modelsFol = (path, folderName) => {
 
     fs.mkdir(`${path}/${folderName}/models`, {recursive: true}, (err) => {
         if(err) console.log(err);
@@ -78,7 +78,7 @@ const modelsFol = (path) => {
     })
 };
 
-const mwFol = (path) => {
+const mwFol = (path, folderName) => {
 
     fs.mkdir(`${path}/${folderName}/middleware`, {recursive: true}, (err) => {
         if(err) console.log(err);
@@ -90,7 +90,7 @@ const mwFol = (path) => {
     })
 }
 
-const routesFol = (path) => {
+const routesFol = (path, folderName) => {
 
     fs.mkdir(`${path}/${folderName}/routes`, {recursive: true}, (err) => {
         if(err) console.log(err);
