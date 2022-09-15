@@ -1,0 +1,23 @@
+{
+  "name": "get-directory-boiler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jalenarms1/get-directory-boiler.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jalenarms1/get-directory-boiler/issues"
+  },
+  "homepage": "https://github.com/Jalenarms1/get-directory-boiler#readme",
+  "dependencies": {
+    "mkdirp": "^1.0.4"
+  }
+}
