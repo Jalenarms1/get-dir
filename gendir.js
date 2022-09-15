@@ -87,7 +87,7 @@ const createDir = (path, folderName) => {
     })
 }
 
-console.log(`Open new folder:${process.argv[2]}/${process.argv[3]}`)
+console.log(`Open new folder: ${process.argv[2]}/${process.argv[3]}`)
 
 createDir(process.argv[2], process.argv[3]);
 
