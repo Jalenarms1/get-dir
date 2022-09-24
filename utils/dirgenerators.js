@@ -19,10 +19,20 @@ const rootFiles = (path, folderName) => {
         }
     })
 
-    fs.writeFile(`${path}/${folderName}/server.js`, "// Place server code here", (err) => {
+    fs.copyFile( `./get-dir/utils/server.js`, `${path}/${folderName}/server.js`, (err) => {
         if(err) {
             console.log(err);
         }
+    })
+
+    fs.mkdir(`${path}/${folderName}/views`, {recursive: true}, (err, res) => {
+        if(err) console.log(err);
+    })
+    fs.mkdir(`${path}/${folderName}/views/layouts`, {recursive: true}, (err, res) => {
+        if(err) console.log(err);
+    })
+    fs.copyFile(`./get-dir/utils/main.handlebars`, `${path}/${folderName}/views/layouts`, (err, res) => {
+        if(err) console.log(err);
     })
 };
 
@@ -31,19 +41,23 @@ const publicsFol = (path, folderName) => {
     fs.mkdir(`${path}/${folderName}/public`, {recursive: true}, (err) => {
         if(err) console.log(err);
     });
-    fs.writeFile(`${path}/${folderName}/public/index.html`, "<!--  Place html here -->", (err) => {
-        if(err) console.log(err);
-
-    })
+    
     
     fs.mkdir(`${path}/${folderName}/public/assets`, {recursive: true}, (err) => {
         if(err) console.log(err);
     })
-    fs.writeFile(`${path}/${folderName}/public/assets/index.js`, "// Place script code here", (err) => {
+    fs.mkdir(`${path}/public/assets/css`, {recursive: true}, (err) => {
+        if(err) console.log(err);
+    })
+    fs.mkdir(`${path}/public/assets/js`, {recursive: true}, (err) => {
+        if(err) console.log(err);
+    })
+
+    fs.writeFile(`${path}/${folderName}/public/assets/js/index.js`, "// Place script code here", (err) => {
         if(err) console.log(err);
 
     })
-    fs.writeFile(`${path}/${folderName}/public/assets/styles.css`, "/* place styles here */", (err) => {
+    fs.writeFile(`${path}/${folderName}/public/assets/css/styles.css`, "/* place styles here */", (err) => {
         if(err) console.log(err);
 
     })
@@ -85,11 +99,11 @@ const modelsFol = (path, folderName) => {
 
 const mwFol = (path, folderName) => {
 
-    fs.mkdir(`${path}/${folderName}/middleware`, {recursive: true}, (err) => {
+    fs.mkdir(`${path}/${folderName}/utils`, {recursive: true}, (err) => {
         if(err) console.log(err);
     })
 
-    fs.writeFile(`${path}/${folderName}/middleware/clog.js`, "// Place script code for middleware here", (err) => {
+    fs.writeFile(`${path}/${folderName}/utils/helpers.js`, "// Place script code for middleware here", (err) => {
         if(err) console.log(err);
 
     })
@@ -97,17 +111,17 @@ const mwFol = (path, folderName) => {
 
 const routesFol = (path, folderName) => {
 
-    fs.mkdir(`${path}/${folderName}/routes`, {recursive: true}, (err) => {
+    fs.mkdir(`${path}/${folderName}/controllers`, {recursive: true}, (err) => {
         if(err) console.log(err);
     })
-    fs.writeFile(`${path}/${folderName}/routes/index.js`, "// Place script code for routes here", (err) => {
+    fs.writeFile(`${path}/${folderName}/controllers/index.js`, "// Place script code for routes here", (err) => {
         if(err) console.log(err);
     })
 
-    fs.mkdir(`${path}/${folderName}/routes/api`, {recursive: true}, (err) => {
+    fs.mkdir(`${path}/${folderName}/controllers/api`, {recursive: true}, (err) => {
         if(err) console.log(err);
     })
-    fs.writeFile(`${path}/${folderName}/routes/api/routes.js`, "// Place script code for routes here", (err) => {
+    fs.writeFile(`${path}/${folderName}/controllers/api/index.js`, "// Place script code for routes here", (err) => {
         if(err) console.log(err);
     })
 }
